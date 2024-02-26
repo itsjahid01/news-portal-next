@@ -1,10 +1,10 @@
 import React from 'react';
 
 const HomePage = () => {
-  // console.log('jahid');
+
   return (
     <div>
-      <h2 className='text-center'>Welcome to next js project</h2>
+      <h2 className='text-center'>Welcome to Home Page</h2>
     </div>
   );
 };
