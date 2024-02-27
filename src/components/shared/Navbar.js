@@ -13,7 +13,13 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../assets/Grouplogo.png'
+import logo from '@/assets/Grouplogo.png'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { Stack } from '@mui/material';
 
 const pages = [{
   path:'/',
@@ -51,8 +57,7 @@ function Navbar() {
     <AppBar className='bg-black' position="static">
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <Image src={logo} alt='logo'></Image>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -88,25 +93,8 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box  sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',}, textAlign:'center'}}>
+          <Image src={logo} alt='logo'></Image>
+          <Box  sx={{ flexGrow: 1, justifyContent:'center', display: { xs: 'none', md: 'flex',}}}>
             {pages.map((page) => (
               <Link className='mx-2' href={page.path}
                 key={page?.path}
@@ -116,6 +104,15 @@ function Navbar() {
                 {page?.pathName}
               </Link>
             ))}
+          </Box>
+          <Box>
+              <Stack direction='row' spacing={1}>
+              <FacebookIcon></FacebookIcon>
+              <TwitterIcon></TwitterIcon>
+              <YouTubeIcon></YouTubeIcon>
+              <LinkedInIcon></LinkedInIcon>
+              <InstagramIcon></InstagramIcon>
+              </Stack>
           </Box>
         </Toolbar>
       </Container>
