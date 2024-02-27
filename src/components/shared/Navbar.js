@@ -11,8 +11,30 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import Link from 'next/link';
+import Image from 'next/image';
+import logo from '../../assets/Grouplogo.png'
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [{
+  path:'/',
+  pathName:"Home"
+},{
+  path:"/pages",
+  pathName:"Pages"
+},{
+  path:"/category",
+  pathName:"Category"
+},{
+  path:"/news",
+  pathName:"News"
+},{
+  path:"/post",
+  pathName:"Post"
+},{
+  path:"/contact",
+  pathName:"Contact"
+}
+];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,9 +48,10 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar className='bg-black' position="static">
       <Container maxWidth="lg">
         <Toolbar disableGutters>
+          <Image src={logo} alt='logo'></Image>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -59,8 +82,8 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page?.path} onClick={handleCloseNavMenu}>
+                  <Link href={page.path} textAlign="center">{page.pathName}</Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -83,19 +106,16 @@ function Navbar() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box  sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',}, textAlign:'center'}}>
             {pages.map((page) => (
-              <Button
-                key={page}
+              <Link className='mx-2' href={page.path}
+                key={page?.path}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block'}}
               >
-                {page}
-              </Button>
+                {page?.pathName}
+              </Link>
             ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
           </Box>
         </Toolbar>
       </Container>
