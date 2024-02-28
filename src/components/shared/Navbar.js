@@ -57,7 +57,33 @@ function Navbar() {
     <AppBar className='bg-black' position="static">
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box>
+          <Link href='/'><Image src={logo} alt='logo'></Image></Link>
+          </Box>
+          <Box  sx={{ flexGrow: 1, justifyContent:'center', display: { xs: 'none', md: 'flex',}}}>
+            {pages.map((page) => (
+              <Link className='mx-2' href={page.path}
+                key={page?.path}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block'}}
+              >
+                {page?.pathName}
+              </Link>
+            ))}
+          </Box>
+          <Box sx={{display:{xs:'none',md:'flex'}}}>
+              <Stack direction='row' spacing={1}>
+              <FacebookIcon></FacebookIcon>
+              <TwitterIcon></TwitterIcon>
+              <YouTubeIcon></YouTubeIcon>
+              <LinkedInIcon></LinkedInIcon>
+              <InstagramIcon></InstagramIcon>
+              </Stack>
+          </Box>
+
+          {/* small device  */}
+
+          <Box  sx={{flexGrow:'1', justifyContent:'flex-end', display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -92,27 +118,6 @@ function Navbar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
-          <Image src={logo} alt='logo'></Image>
-          <Box  sx={{ flexGrow: 1, justifyContent:'center', display: { xs: 'none', md: 'flex',}}}>
-            {pages.map((page) => (
-              <Link className='mx-2' href={page.path}
-                key={page?.path}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block'}}
-              >
-                {page?.pathName}
-              </Link>
-            ))}
-          </Box>
-          <Box>
-              <Stack direction='row' spacing={1}>
-              <FacebookIcon></FacebookIcon>
-              <TwitterIcon></TwitterIcon>
-              <YouTubeIcon></YouTubeIcon>
-              <LinkedInIcon></LinkedInIcon>
-              <InstagramIcon></InstagramIcon>
-              </Stack>
           </Box>
         </Toolbar>
       </Container>
