@@ -1,19 +1,25 @@
 import LatestNews from "@/components/ui/Home/LatestNews";
-import { Box, Grid, Item } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 
 const HomePage = () => {
   return (
-    <Box>
-      <Grid container spacing={2}>
-        <Grid item xs={8}>
-          <Item>xs=8</Item>
+    <Container maxWidth="lg">
+      <Box>
+        <Grid container spacing={4}>
+          <Grid item xs={8}>
+            <LatestNews></LatestNews>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography
+              variant="h5"
+              className="my-4 p-3 font-semibold w-[200px] border-0 border-b-4 border-b-[#FF0000]"
+            >
+              Latest News
+            </Typography>
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <Item>xs=4</Item>
-        </Grid>
-      </Grid>
-      <LatestNews></LatestNews>
-    </Box>
+      </Box>
+    </Container>
   );
 };
 

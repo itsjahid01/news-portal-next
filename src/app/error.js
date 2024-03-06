@@ -1,10 +1,16 @@
 "use client";
 
+import { Box, Container, Typography } from "@mui/material";
+
 const ErrorPage = () => {
   return (
-    <div>
-      <h1>Error Page</h1>
-    </div>
+    <>
+      <Container maxWidth="lg">
+        <Box>
+          <Typography variant="h3">Error Page</Typography>
+        </Box>
+      </Container>
+    </>
   );
 };
 
