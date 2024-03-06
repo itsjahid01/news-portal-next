@@ -1,5 +1,5 @@
 import LatestNews from "@/components/ui/Home/LatestNews";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Item } from "@mui/material";
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
           <Item>xs=4</Item>
         </Grid>
       </Grid>
-      {/* <LatestNews></LatestNews> */}
+      <LatestNews></LatestNews>
     </Box>
   );
 };

@@ -1,11 +1,11 @@
 "use client";
 
-const ErrorMessage = () => {
+const ErrorPage = () => {
   return (
     <div>
-      <h1>gasgvdyagik</h1>
+      <h1>Error Page</h1>
     </div>
   );
 };
 
-export default ErrorMessage;
+export default ErrorPage;
