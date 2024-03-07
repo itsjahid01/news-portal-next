@@ -5,6 +5,7 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  Grid,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
@@ -16,13 +17,7 @@ const LatestNews = async () => {
   console.log(data);
   return (
     <>
-      <Box>
-        <Typography
-          variant="h5"
-          className="my-4 p-3 font-semibold w-[200px] border-0 border-b-4 border-b-[#FF0000]"
-        >
-          National News
-        </Typography>
+      <Box sx={{ my: 5 }}>
         <Card sx={{ my: 3 }}>
           <CardActionArea>
             <CardMedia>
@@ -52,6 +47,40 @@ const LatestNews = async () => {
           </CardActionArea>
         </Card>
         <hr className="my-4" />
+        <Grid container spacing={2}>
+          {data.slice(0, 8).map((news) => (
+            <Grid key={news._id} item xs={6}>
+              <Card sx={{ height: "500px" }}>
+                <CardActionArea>
+                  <CardMedia>
+                    <Image
+                      src={news?.thumbnail_url}
+                      alt="image"
+                      width={400}
+                      height={200}
+                    ></Image>
+                  </CardMedia>
+                  <CardContent>
+                    <span className="p-1 rounded-md text-white bg-[#FF0000]">
+                      {news?.category}
+                    </span>
+                    <Typography variant="h5" sx={{ my: 2 }}>
+                      {news?.title}
+                    </Typography>
+                    <Typography sx={{ my: 2 }}>
+                      By {news?.author?.name} - {news?.author?.published_date}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {news?.details.length > 100
+                        ? news?.details.slice(0, 100) + "....."
+                        : news?.details}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Box>
     </>
   );
