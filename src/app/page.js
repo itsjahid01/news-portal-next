@@ -1,4 +1,5 @@
 import LatestNews from "@/components/ui/Home/LatestNews";
+import Sidebar from "@/components/ui/Home/Sidebar";
 import { getAllNews } from "@/utils/getAllNews";
 import {
   Box,
@@ -30,8 +31,9 @@ const HomePage = async () => {
               variant="h5"
               className="my-4 p-3 font-semibold w-[200px] border-0 border-b-2 border-b-[#FF0000]"
             >
-              Sidebar
+              Latest News
             </Typography>
+            <Sidebar></Sidebar>
           </Grid>
         </Grid>
       </Box>

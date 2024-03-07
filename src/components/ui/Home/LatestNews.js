@@ -14,7 +14,7 @@ import React from "react";
 const LatestNews = async () => {
   const { data } = await getAllNews();
   const { id, category, title, author, details, thumbnail_url } = data[0];
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <Box sx={{ my: 5 }}>
