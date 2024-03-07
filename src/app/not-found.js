@@ -8,12 +8,16 @@ const ErrorPage = () => {
         <Box
           sx={{
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
             minHeight: "100vh",
           }}
         >
-          <Typography variant="h2">404</Typography>
+          <Typography variant="h1">404</Typography>
+          <Typography sx={{ color: "red" }} variant="h4">
+            Page Not Found
+          </Typography>
         </Box>
       </Container>
     </>
