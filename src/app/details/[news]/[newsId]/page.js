@@ -6,7 +6,7 @@ import React from "react";
 const DetailsPage = async ({ params }) => {
   const { data } = await getSingleNews(params?.newsId);
   const { title, author, thumbnail_url, image_url, details } = data;
-  console.log(data);
+  //   console.log(data);
   return (
     <Container maxWidth="lg">
       <Box className="my-6 p-4">

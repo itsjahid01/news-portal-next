@@ -27,7 +27,7 @@ const pages = [
     pathName: "Home",
   },
   {
-    path: "#",
+    path: "",
     pathName: "Pages",
   },
   {
@@ -43,7 +43,7 @@ const pages = [
     pathName: "Post",
   },
   {
-    path: "/#",
+    path: "",
     pathName: "Contact",
   },
 ];
