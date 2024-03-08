@@ -32,7 +32,7 @@ const LatestNews = async () => {
               <span className="p-2 rounded-md text-white bg-[#FF0000]">
                 {category}
               </span>
-              <Typography variant="h5" sx={{ my: 2 }}>
+              <Typography variant="h5" sx={{ my: 2, fontWeight: "bold" }}>
                 {title}
               </Typography>
               <Typography sx={{ my: 2 }}>
@@ -64,7 +64,7 @@ const LatestNews = async () => {
                     <span className="p-1 rounded-md text-white bg-[#FF0000]">
                       {news?.category}
                     </span>
-                    <Typography variant="h5" sx={{ my: 2 }}>
+                    <Typography variant="h5" sx={{ my: 2, fontWeight: "bold" }}>
                       {news?.title}
                     </Typography>
                     <Typography sx={{ my: 2 }}>

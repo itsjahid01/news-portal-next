@@ -34,10 +34,10 @@ const Sidebar = async () => {
               <span className="p-2 rounded-md text-white bg-[#FF0000]">
                 {category}
               </span>
-              <Typography variant="h5" sx={{ my: 2 }}>
+              <Typography variant="h6" sx={{ my: 1, fontWeight: "bold" }}>
                 {title}
               </Typography>
-              <Typography sx={{ my: 2 }}>
+              <Typography sx={{ my: 1 }}>
                 By {author?.name} - {author?.published_date}
               </Typography>
             </CardContent>
@@ -45,20 +45,24 @@ const Sidebar = async () => {
         </Card>
         <hr className="my-4" />
         <Grid container spacing={2}>
-          {data.map((news) => (
+          {data.slice(0, 8).map((news) => (
             <Grid key={news?._id} item xs={12}>
-              <Stack direction="row" spacing={3}>
+              <Stack direction="row" spacing={2}>
                 <Image
+                  className="rounded-md"
                   src={news?.image_url}
-                  alt=""
-                  width={100}
-                  height={100}
+                  alt="image"
+                  width={90}
+                  height={90}
                 ></Image>
                 <Box>
-                  <Typography variant="">{news?.title}</Typography>
+                  <Typography sx={{ fontWeight: "bold", mb: 1 }}>
+                    {news?.title}
+                  </Typography>
                   <Typography>{news?.author?.published_date}</Typography>
                 </Box>
               </Stack>
+              <hr className="my-4" />
             </Grid>
           ))}
         </Grid>
