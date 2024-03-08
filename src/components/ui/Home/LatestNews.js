@@ -29,7 +29,7 @@ const LatestNews = async () => {
               ></Image>
             </CardMedia>
             <CardContent>
-              <span className="p-2 rounded-md text-white bg-[#FF0000]">
+              <span className="p-1 rounded-md text-white bg-[#FF0000]">
                 {category}
               </span>
               <Typography variant="h5" sx={{ my: 2, fontWeight: "bold" }}>

@@ -1,5 +1,6 @@
 import { getAllCategories } from "@/utils/getAllCategories";
 import { Box, Button, Stack, Typography } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 
 const CategoryList = async () => {
@@ -18,7 +19,11 @@ const CategoryList = async () => {
             variant="outlined"
             className="text-[#151515] border-[#151515]"
           >
-            {category?.title}
+            <Link
+              href={`/categories/news?category=${category?.title.toLowerCase()}`}
+            >
+              {category?.title}
+            </Link>
           </Button>
         ))}
       </Stack>

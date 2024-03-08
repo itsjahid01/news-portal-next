@@ -27,11 +27,11 @@ const pages = [
     pathName: "Home",
   },
   {
-    path: "/pages",
+    path: "#",
     pathName: "Pages",
   },
   {
-    path: "/category",
+    path: "/categories/news?category=all-news",
     pathName: "Category",
   },
   {
@@ -43,7 +43,7 @@ const pages = [
     pathName: "Post",
   },
   {
-    path: "/contact",
+    path: "/#",
     pathName: "Contact",
   },
 ];
