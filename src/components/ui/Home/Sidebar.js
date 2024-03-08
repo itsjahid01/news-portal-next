@@ -45,7 +45,7 @@ const Sidebar = async () => {
         </Card>
         <hr className="my-4" />
         <Grid container spacing={2}>
-          {data.slice(0, 8).map((news) => (
+          {data.slice(0, 10).map((news) => (
             <Grid key={news?._id} item xs={12}>
               <Stack direction="row" spacing={2}>
                 <Image
